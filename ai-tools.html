@@ -152,49 +152,27 @@
             loading.classList.remove('hidden');
             result.classList.add('hidden');
             error.classList.add('hidden');
+            statusText.textContent = '正在生成，約需 5-10 秒...';
 
             try {
-                // 1. 創建任務
-                statusText.textContent = '創建生成任務...';
-                const createRes = await fetch(`${CONFIG.API_BASE}/generate`, {
+                const response = await fetch(`${CONFIG.API_BASE}/generate`, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ prompt, width, height })
                 });
-                const createData = await createRes.json();
                 
-                if (!createData.success) throw new Error(createData.error);
-                const { uuid } = createData.data;
-
-                // 2. 輪詢等待完成
-                for (let i = 0; i < CONFIG.MAX_ATTEMPTS; i++) {
-                    await new Promise(r => setTimeout(r, CONFIG.POLL_INTERVAL));
-                    
-                    const statusRes = await fetch(`${CONFIG.API_BASE}/status/${uuid}`);
-                    const statusData = await statusRes.json();
-                    
-                    if (!statusData.success) continue;
-                    const status = statusData.data;
-
-                    if (status.status === 'pending') {
-                        statusText.textContent = `排隊中，前面還有 ${status.queuePosition} 個任務...`;
-                    } else if (status.status === 'processing') {
-                        statusText.textContent = `生成中 ${status.progress || 0}%...`;
-                    } else if (status.status === 'completed') {
-                        // 3. 顯示結果
-                        loading.classList.add('hidden');
-                        result.classList.remove('hidden');
-                        document.getElementById('resultImage').src = status.resultUrl;
-                        document.getElementById('downloadBtn').href = status.resultUrl;
-                        btn.disabled = false;
-                        btn.textContent = '✨ 再次生成';
-                        return;
-                    } else if (status.status === 'failed') {
-                        throw new Error(status.errorMessage || '生成失敗');
-                    }
-                }
+                const data = await response.json();
                 
-                throw new Error('生成超時');
+                if (!data.success) throw new Error(data.error || '生成失敗');
+
+                // 直接顯示結果
+                loading.classList.add('hidden');
+                result.classList.remove('hidden');
+                document.getElementById('resultImage').src = data.data.resultUrl;
+                document.getElementById('downloadBtn').href = data.data.resultUrl;
+                btn.disabled = false;
+                btn.textContent = '✨ 再次生成';
+
             } catch (e) {
                 loading.classList.add('hidden');
                 error.textContent = '❌ ' + e.message;

@@ -155,27 +155,29 @@
             statusText.textContent = '正在生成，約需 5-10 秒...';
 
             try {
-                const response = await fetch(`${CONFIG.API_BASE}/generate`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ prompt, width, height })
+                // 直接呼叫 Pollinations.ai（免費，無需 Worker）
+                const encodedPrompt = encodeURIComponent(prompt);
+                const imageUrl = `https://image.pollinations.ai/prompt/${encodedPrompt}?width=${width}&height=${height}&nologo=true&seed=${Date.now()}`;
+                
+                // 預加載圖片確保可用
+                await new Promise((resolve, reject) => {
+                    const img = new Image();
+                    img.onload = resolve;
+                    img.onerror = reject;
+                    img.src = imageUrl;
                 });
-                
-                const data = await response.json();
-                
-                if (!data.success) throw new Error(data.error || '生成失敗');
 
-                // 直接顯示結果
+                // 顯示結果
                 loading.classList.add('hidden');
                 result.classList.remove('hidden');
-                document.getElementById('resultImage').src = data.data.resultUrl;
-                document.getElementById('downloadBtn').href = data.data.resultUrl;
+                document.getElementById('resultImage').src = imageUrl;
+                document.getElementById('downloadBtn').href = imageUrl;
                 btn.disabled = false;
                 btn.textContent = '✨ 再次生成';
 
             } catch (e) {
                 loading.classList.add('hidden');
-                error.textContent = '❌ ' + e.message;
+                error.textContent = '❌ 生成失敗，請重試';
                 error.classList.remove('hidden');
                 btn.disabled = false;
                 btn.textContent = '✨ 重新生成';

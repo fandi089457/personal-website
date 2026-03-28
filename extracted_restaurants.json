@@ -1,0 +1,16 @@
+[
+  {
+    "name": "華西街觀光夜市",
+    "location": "台北市萬華區",
+    "featured_in": "Best Taiwanese STREET FOOD in Huaxi Night Market",
+    "rating": "4.5",
+    "type": "夜市"
+  },
+  {
+    "name": "台灣街頭小吃合集",
+    "location": "全台各地",
+    "featured_in": "Taiwan Street Food Marathon",
+    "rating": "4.8",
+    "type": "街頭小吃"
+  }
+]

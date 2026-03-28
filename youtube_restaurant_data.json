@@ -1,0 +1,26 @@
+{
+  "source": "YouTube",
+  "query": "餐廳 推薦 台灣",
+  "timestamp": "auto",
+  "videos": [
+    {
+      "title": "Taiwan Street Food Marathon!! From $1 to $1000!",
+      "channel": "More Best Ever Food Review Show",
+      "duration": "1:10:48",
+      "type": "Food Review"
+    },
+    {
+      "title": "Best Taiwanese STREET FOOD in Huaxi Night Market",
+      "channel": "Travel Channel",
+      "duration": "15:30",
+      "type": "Street Food"
+    },
+    {
+      "title": "Eating the world's oldest egg - Taiwan",
+      "channel": "Food Explorer",
+      "duration": "4:11",
+      "type": "Specialty Food"
+    }
+  ],
+  "status": "success"
+}

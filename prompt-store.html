@@ -23,8 +23,8 @@
                     <a href="#coding" class="hover:text-yellow-300 transition">程式开发</a>
                     <a href="#design" class="hover:text-yellow-300 transition">设计创意</a>
                 </div>
-                <button class="bg-yellow-400 text-gray-900 px-6 py-2 rounded-full font-bold hover:bg-yellow-300 transition">
-                    购物车 (0)
+                <button id="cartBtn" class="bg-yellow-400 text-gray-900 px-6 py-2 rounded-full font-bold hover:bg-yellow-300 transition">
+                    购物车 (<span id="cartCount">0</span>)
                 </button>
             </div>
         </div>
@@ -431,6 +431,73 @@
             if (e.target === this) {
                 closePreview();
             }
+        });
+
+        // ===== 购物车存档系统 =====
+        let cart = JSON.parse(localStorage.getItem('nul-cart') || '[]');
+        
+        function updateCartCount() {
+            document.getElementById('cartCount').textContent = cart.length;
+        }
+        
+        function addToCart(item) {
+            cart.push({
+                id: Date.now(),
+                name: item.name,
+                price: item.price,
+                added_at: new Date().toISOString()
+            });
+            localStorage.setItem('nul-cart', JSON.stringify(cart));
+            updateCartCount();
+            alert(`已添加 "${item.name}" 到购物车！`);
+        }
+        
+        function clearCart() {
+            cart = [];
+            localStorage.removeItem('nul-cart');
+            updateCartCount();
+        }
+        
+        // 页面加载时恢复购物车
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCartCount();
+            console.log('💾 购物车已恢复，共', cart.length, '件商品');
+        });
+        
+        // 给所有购买按钮添加点击事件
+        document.querySelectorAll('button').forEach(btn => {
+            if (btn.textContent.includes('加入购物车') || btn.textContent.includes('立即购买')) {
+                btn.addEventListener('click', function() {
+                    const card = this.closest('.bg-white');
+                    if (card) {
+                        const name = card.querySelector('h3')?.textContent || '未知商品';
+                        const priceText = card.querySelector('.text-2xl, .text-xl')?.textContent || 'NT$0';
+                        addToCart({ name, price: priceText });
+                    }
+                });
+            }
+        });
+        
+        // 查看购物车
+        document.getElementById('cartBtn')?.addEventListener('click', function() {
+            if (cart.length === 0) {
+                alert('购物车是空的！');
+                return;
+            }
+            
+            let cartText = '🛒 购物车内容：\n\n';
+            let total = 0;
+            
+            cart.forEach((item, i) => {
+                cartText += `${i + 1}. ${item.name} - ${item.price}\n`;
+                const price = parseInt(item.price.replace(/[^0-9]/g, ''));
+                total += price || 0;
+            });
+            
+            cartText += `\n💰 总计: NT$${total}`;
+            cartText += '\n\n发送邮件到 fandi089457@gmail.com 完成购买';
+            
+            alert(cartText);
         });
     </script>
 </body>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{SALON_NAME} - 專業美髮沙龍</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Noto Sans TC', sans-serif; }
+        .salon-gradient { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Header -->
+    <nav class="salon-gradient text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-bold">{SALON_NAME}</h1>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#about" class="hover:text-pink-300 transition">關於我們</a>
+                    <a href="#services" class="hover:text-pink-300 transition">服務項目</a>
+                    <a href="#gallery" class="hover:text-pink-300 transition">作品集</a>
+                    <a href="#booking" class="hover:text-pink-300 transition">線上預約</a>
+                </div>
+                <a href="#booking" class="bg-pink-500 text-white px-6 py-2 rounded-full font-bold hover:bg-pink-400 transition">
+                    立即預約
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-pink-900/80 via-purple-900/80 to-blue-900/80 z-10"></div>
+        <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1920" class="absolute inset-0 w-full h-full object-cover" alt="美髮沙龍">
+        <div class="relative z-20 text-center text-white px-6">
+            <h2 class="text-5xl md:text-7xl font-bold mb-6">發現最美的自己</h2>
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">專業設計師團隊 · 一對一量身打造 · 頂級護髮產品</p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#booking" class="bg-pink-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-pink-400 transition transform hover:scale-105">
+                    預約免費諮詢 💇‍♀️
+                </a>
+                <a href="#services" class="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-gray-900 transition">
+                    查看服務項目
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+                <div class="p-6">
+                    <div class="text-4xl mb-4">✂️</div>
+                    <h3 class="text-lg font-bold mb-2">專業剪髮</h3>
+                    <p class="text-gray-600 text-sm">依臉型設計最適合髮型</p>
+                </div>
+                <div class="p-6">
+                    <div class="text-4xl mb-4">🎨</div>
+                    <h3 class="text-lg font-bold mb-2">時尚染髮</h3>
+                    <p class="text-gray-600 text-sm">日系韓系流行色一次擁有</p>
+                </div>
+                <div class="p-6">
+                    <div class="text-4xl mb-4">✨</div>
+                    <h3 class="text-lg font-bold mb-2">質感燙髮</h3>
+                    <p class="text-gray-600 text-sm">溫朔燙、韓系燙、歐美燙</p>
+                </div>
+                <div class="p-6">
+                    <div class="text-4xl mb-4">🌿</div>
+                    <h3 class="text-lg font-bold mb-2">深層護髮</h3>
+                    <p class="text-gray-600 text-sm">頂級護髮讓秀髮重現光澤</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-20 bg-pink-50">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=800" class="rounded-2xl shadow-2xl" alt="沙龍環境">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-4xl font-bold mb-6 text-pink-800">關於 {SALON_NAME}</h2>
+                    <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                        我們堅信，每個人都值得擁有屬於自己的美麗。由資深設計師團隊坐鎮，
+                        採用國際頂級髮品，結合最新日韓潮流技術，為您量身打造專屬造型。
+                        無論是日常整理還是重要場合，我們都能讓您煥發自信光采。
+                    </p>
+                    <div class="flex gap-4">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-pink-600">10+</div>
+                            <div class="text-sm text-gray-600">年經驗</div>
+                        </div>
+                        <div class="w-px bg-pink-300"></div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-pink-600">50K+</div>
+                            <div class="text-sm text-gray-600">服務人次</div>
+                        </div>
+                        <div class="w-px bg-pink-300"></div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-pink-600">4.8</div>
+                            <div class="text-sm text-gray-600">Google評價</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 text-pink-800">服務項目 & 價格</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Cut -->
+                <div class="bg-gradient-to-br from-pink-50 to-purple-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transition">
+                    <div class="text-4xl mb-4">✂️</div>
+                    <h3 class="text-2xl font-bold mb-4">剪髮服務</h3>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex justify-between">
+                            <span>設計師洗剪</span>
+                            <span class="font-bold">NT$600</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>資深設計師洗剪</span>
+                            <span class="font-bold">NT$800</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>總監洗剪</span>
+                            <span class="font-bold">NT$1,200</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>兒童剪髮</span>
+                            <span class="font-bold">NT$400</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-pink-500 text-white py-3 rounded-full font-bold hover:bg-pink-600 transition">
+                        預約剪髮
+                    </button>
+                </div>
+
+                <!-- Color -->
+                <div class="bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transition">
+                    <div class="text-4xl mb-4">🎨</div>
+                    <h3 class="text-2xl font-bold mb-4">染髮服務</h3>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex justify-between">
+                            <span>單色染髮</span>
+                            <span class="font-bold">NT$1,500起</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>挑染/漸層</span>
+                            <span class="font-bold">NT$2,500起</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>特殊色處理</span>
+                            <span class="font-bold">NT$3,500起</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>補染髮根</span>
+                            <span class="font-bold">NT$1,000起</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-purple-500 text-white py-3 rounded-full font-bold hover:bg-purple-600 transition">
+                        預約染髮
+                    </button>
+                </div>
+
+                <!-- Perm -->
+                <div class="bg-gradient-to-br from-blue-50 to-pink-50 rounded-2xl p-8 shadow-lg hover:shadow-xl transition">
+                    <div class="text-4xl mb-4">✨</div>
+                    <h3 class="text-2xl font-bold mb-4">燙髮 & 護髮</h3>
+                    <ul class="space-y-3 mb-6">
+                        <li class="flex justify-between">
+                            <span>溫朔燙</span>
+                            <span class="font-bold">NT$2,500起</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>韓系燙髮</span>
+                            <span class="font-bold">NT$3,000起</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>深層護髮</span>
+                            <span class="font-bold">NT$1,200起</span>
+                        </li>
+                        <li class="flex justify-between">
+                            <span>頭皮護理</span>
+                            <span class="font-bold">NT$1,500</span>
+                        </li>
+                    </ul>
+                    <button class="w-full bg-blue-500 text-white py-3 rounded-full font-bold hover:bg-blue-600 transition">
+                        預約燙髮
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 text-pink-800">作品集</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=400" class="w-full h-64 object-cover rounded-lg hover:shadow-lg transition cursor-pointer" alt="髮型作品">
+                <img src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=400" class="w-full h-64 object-cover rounded-lg hover:shadow-lg transition cursor-pointer" alt="髮型作品">
+                <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400" class="w-full h-64 object-cover rounded-lg hover:shadow-lg transition cursor-pointer" alt="髮型作品">
+                <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=400" class="w-full h-64 object-cover rounded-lg hover:shadow-lg transition cursor-pointer" alt="髮型作品">
+            </div>
+            <p class="text-center text-gray-500 mt-8">所有作品均為本店設計師實際服務成果</p>
+        </div>
+    </section>
+
+    <!-- Booking -->
+    <section id="booking" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-12 text-pink-800">線上預約</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="text-3xl">📍</div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">地址</h4>
+                                <p class="text-gray-600">{ADDRESS}</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="text-3xl">📞</div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">預約專線</h4>
+                                <p class="text-gray-600">{PHONE}</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="text-3xl">🕐</div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">營業時間</h4>
+                                <p class="text-gray-600">週二至週六 10:00 - 20:00<br>週日 10:00 - 18:00<br>週一公休</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-pink-100 rounded-2xl p-8 text-center">
+                        <h3 class="text-2xl font-bold mb-4 text-pink-800">立即預約</h3>
+                        <p class="text-gray-700 mb-6">新客戶首次來店享 8 折優惠</p>
+                        <a href="tel:{PHONE}" class="block w-full bg-pink-600 text-white font-bold py-4 rounded-full hover:bg-pink-700 transition mb-4">
+                            📞 電話預約
+                        </a>
+                        <p class="text-sm text-gray-500">或加入 LINE 好友線上諮詢</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="mb-4">© 2024 {SALON_NAME}. All rights reserved.</p>
+            <p class="text-gray-400 text-sm">網站由 <span class="text-pink-400">NUL Studio</span> 設計製作</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

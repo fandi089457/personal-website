@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{CAFE_NAME} - 精品咖啡</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Noto Sans TC', sans-serif; }
+        .coffee-gradient { background: linear-gradient(135deg, #4a3b32 0%, #8b6914 100%); }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Header -->
+    <nav class="coffee-gradient text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-bold">{CAFE_NAME}</h1>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#about" class="hover:text-yellow-300 transition">品牌故事</a>
+                    <a href="#menu" class="hover:text-yellow-300 transition">咖啡菜單</a>
+                    <a href="#beans" class="hover:text-yellow-300 transition">精選豆單</a>
+                    <a href="#contact" class="hover:text-yellow-300 transition">門市資訊</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-amber-900/80 to-orange-900/80 z-10"></div>
+        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1920" class="absolute inset-0 w-full h-full object-cover" alt="咖啡廳">
+        <div class="relative z-20 text-center text-white px-6">
+            <h2 class="text-5xl md:text-7xl font-bold mb-6">一杯好咖啡<br>开启美好一天</h2>
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">{SLOGAN}</p>
+            <button class="bg-amber-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-amber-400 transition transform hover:scale-105">
+                探索我們的咖啡 ☕
+            </button>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="p-8 rounded-2xl bg-amber-50 shadow-lg">
+                    <div class="text-5xl mb-4">☕</div>
+                    <h3 class="text-xl font-bold mb-2">手工精萃</h3>
+                    <p class="text-gray-600">每一杯都由專業咖啡師手工沖煮</p>
+                </div>
+                <div class="p-8 rounded-2xl bg-amber-50 shadow-lg">
+                    <div class="text-5xl mb-4">🌱</div>
+                    <h3 class="text-xl font-bold mb-2">精選產區</h3>
+                    <p class="text-gray-600">來自世界各地的優質咖啡豆</p>
+                </div>
+                <div class="p-8 rounded-2xl bg-amber-50 shadow-lg">
+                    <div class="text-5xl mb-4">🏠</div>
+                    <h3 class="text-xl font-bold mb-2">舒適空間</h3>
+                    <p class="text-gray-600">溫馨放鬆的用餐環境</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-20 bg-amber-50">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800" class="rounded-2xl shadow-2xl" alt="咖啡廳環境">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-4xl font-bold mb-6 text-amber-800">關於 {CAFE_NAME}</h2>
+                    <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                        {ABOUT_TEXT}
+                    </p>
+                    <div class="flex gap-4">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-amber-700">100%</div>
+                            <div class="text-sm text-gray-600">阿拉比卡豆</div>
+                        </div>
+                        <div class="w-px bg-amber-300"></div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-amber-700">48h</div>
+                            <div class="text-sm text-gray-600">內烘焙</div>
+                        </div>
+                        <div class="w-px bg-amber-300"></div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-amber-700">4.7</div>
+                            <div class="text-sm text-gray-600">Google評價</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu -->
+    <section id="menu" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 text-amber-800">咖啡菜單</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center border-b border-amber-200 py-4">
+                        <div>
+                            <h4 class="text-xl font-bold">美式咖啡</h4>
+                            <p class="text-gray-600 text-sm">中深烘焙 · 堅果巧克力風味</p>
+                        </div>
+                        <span class="text-xl font-bold text-amber-700">NT$80</span>
+                    </div>
+                    <div class="flex justify-between items-center border-b border-amber-200 py-4">
+                        <div>
+                            <h4 class="text-xl font-bold">拿鐵</h4>
+                            <p class="text-gray-600 text-sm">濃縮咖啡 + 香濃鮮奶</p>
+                        </div>
+                        <span class="text-xl font-bold text-amber-700">NT$120</span>
+                    </div>
+                    <div class="flex justify-between items-center border-b border-amber-200 py-4">
+                        <div>
+                            <h4 class="text-xl font-bold">卡布奇諾</h4>
+                            <p class="text-gray-600 text-sm">濃縮 + 奶泡 · 完美比例</p>
+                        </div>
+                        <span class="text-xl font-bold text-amber-700">NT$120</span>
+                    </div>
+                    <div class="flex justify-between items-center border-b border-amber-200 py-4">
+                        <div>
+                            <h4 class="text-xl font-bold">焦糖瑪奇朵</h4>
+                            <p class="text-gray-600 text-sm">香草 + 焦糖 + 濃縮</p>
+                        </div>
+                        <span class="text-xl font-bold text-amber-700">NT$140</span>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex justify-between items-center border-b border-amber-200 py-4">
+                        <div>
+                            <h4 class="text-xl font-bold">手沖單品</h4>
+                            <p class="text-gray-600 text-sm">每日精選產區豆</p>
+                        </div>
+                        <span class="text-xl font-bold text-amber-700">NT$150</span>
+                    </div>
+                    <div class="flex justify-between items-center border-b border-amber-200 py-4">
+                        <div>
+                            <h4 class="text-xl font-bold">冷翠咖啡</h4>
+                            <p class="text-gray-600 text-sm">12小時低溫萃取</p>
+                        </div>
+                        <span class="text-xl font-bold text-amber-700">NT$130</span>
+                    </div>
+                    <div class="flex justify-between items-center border-b border-amber-200 py-4">
+                        <div>
+                            <h4 class="text-xl font-bold">阿法奇朵</h4>
+                            <p class="text-gray-600 text-sm">濃縮 + 香草冰淇淋</p>
+                        </div>
+                        <span class="text-xl font-bold text-amber-700">NT$150</span>
+                    </div>
+                    <div class="flex justify-between items-center border-b border-amber-200 py-4">
+                        <div>
+                            <h4 class="text-xl font-bold">抹茶拿鐵</h4>
+                            <p class="text-gray-600 text-sm">宇治抹茶 + 鮮奶</p>
+                        </div>
+                        <span class="text-xl font-bold text-amber-700">NT$130</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Beans -->
+    <section id="beans" class="py-20 bg-amber-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 text-amber-800">本月精選咖啡豆</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1559056199-641a0ac8b55e?w=400" class="w-full h-48 object-cover" alt="咖啡豆">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">衣索比亞 耶加雪菲</h3>
+                        <p class="text-gray-600 mb-4">花香、柑橘、茶感</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-amber-700 font-bold">淺中烘焙</span>
+                            <span class="text-xl font-bold">NT$450/半磅</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=400" class="w-full h-48 object-cover" alt="咖啡豆">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">哥倫比亞 慧蘭</h3>
+                        <p class="text-gray-600 mb-4">焦糖、堅果、巧克力</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-amber-700 font-bold">中烘焙</span>
+                            <span class="text-xl font-bold">NT$380/半磅</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1611854779393-1b2da9d400fe?w=400" class="w-full h-48 object-cover" alt="咖啡豆">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">瓜地馬拉 安提瓜</h3>
+                        <p class="text-gray-600 mb-4">煙草、可可、香料</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-amber-700 font-bold">中深烘焙</span>
+                            <span class="text-xl font-bold">NT$420/半磅</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-12 text-amber-800">門市資訊</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="text-3xl">📍</div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">地址</h4>
+                                <p class="text-gray-600">{ADDRESS}</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="text-3xl">📞</div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">電話</h4>
+                                <p class="text-gray-600">{PHONE}</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="text-3xl">🕐</div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">營業時間</h4>
+                                <p class="text-gray-600">週一至週五 07:00 - 21:00<br>週六週日 08:00 - 22:00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-amber-100 rounded-2xl p-8 text-center">
+                        <h3 class="text-2xl font-bold mb-4 text-amber-800">加入我們的會員</h3>
+                        <p class="text-gray-700 mb-6">集點享優惠，生日當月飲品買一送一</p>
+                        <button class="bg-amber-600 text-white px-8 py-3 rounded-full font-bold hover:bg-amber-700 transition w-full">
+                            免費加入會員
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="mb-4">© 2024 {CAFE_NAME}. All rights reserved.</p>
+            <p class="text-gray-400 text-sm">網站由 <span class="text-amber-400">NUL Studio</span> 設計製作</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

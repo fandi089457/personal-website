@@ -159,15 +159,10 @@
                 const encodedPrompt = encodeURIComponent(prompt);
                 const imageUrl = `https://image.pollinations.ai/prompt/${encodedPrompt}?width=${width}&height=${height}&nologo=true&seed=${Date.now()}`;
                 
-                // 預加載圖片確保可用
-                await new Promise((resolve, reject) => {
-                    const img = new Image();
-                    img.onload = resolve;
-                    img.onerror = reject;
-                    img.src = imageUrl;
-                });
+                // 等待 3 秒讓圖片開始生成
+                await new Promise(r => setTimeout(r, 3000));
 
-                // 顯示結果
+                // 直接顯示結果（不預加載，直接顯示URL）
                 loading.classList.add('hidden');
                 result.classList.remove('hidden');
                 document.getElementById('resultImage').src = imageUrl;

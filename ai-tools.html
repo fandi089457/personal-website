@@ -38,6 +38,44 @@
                 <p class="text-gray-400">輸入描述，立即生成精美圖片</p>
             </div>
 
+            <!-- 成品展示画廊 - 网站自己会推销 -->
+            <div class="glass rounded-2xl p-6 mb-8">
+                <h3 class="text-xl font-bold mb-4 text-center">🎨 看看我们能生成什么</h3>
+                <p class="text-gray-400 text-center text-sm mb-4">点击下方示例查看效果，或直接输入描述生成你的专属图片</p>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+                    <div class="relative group cursor-pointer" onclick="setPrompt('A beautiful sunset over the ocean with pink and orange clouds, photorealistic, 4k')">
+                        <img src="https://image.pollinations.ai/prompt/A%20beautiful%20sunset%20over%20the%20ocean%20with%20pink%20and%20orange%20clouds,%20photorealistic?width=400&height=400&nologo=true" 
+                             class="w-full h-32 object-cover rounded-lg opacity-80 group-hover:opacity-100 transition" alt="日落海景">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-2 rounded-b-lg">
+                            <p class="text-xs text-white">🌅 日落海景</p>
+                        </div>
+                    </div>
+                    <div class="relative group cursor-pointer" onclick="setPrompt('Cute anime girl with blue hair and purple eyes, cherry blossom background, detailed, high quality')">
+                        <img src="https://image.pollinations.ai/prompt/Cute%20anime%20girl%20with%20blue%20hair%20and%20purple%20eyes,%20cherry%20blossom%20background?width=400&height=400&nologo=true" 
+                             class="w-full h-32 object-cover rounded-lg opacity-80 group-hover:opacity-100 transition" alt="动漫少女">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-2 rounded-b-lg">
+                            <p class="text-xs text-white">🎭 动漫风格</p>
+                        </div>
+                    </div>
+                    <div class="relative group cursor-pointer" onclick="setPrompt('Modern minimalist logo design for tech company, gradient colors, professional, vector style')">
+                        <img src="https://image.pollinations.ai/prompt/Modern%20minimalist%20logo%20design%20for%20tech%20company,%20gradient%20colors,%20professional?width=400&height=400&nologo=true" 
+                             class="w-full h-32 object-cover rounded-lg opacity-80 group-hover:opacity-100 transition" alt="Logo设计">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-2 rounded-b-lg">
+                            <p class="text-xs text-white">🎨 Logo设计</p>
+                        </div>
+                    </div>
+                    <div class="relative group cursor-pointer" onclick="setPrompt('Elegant product photography of luxury perfume bottle on marble surface, studio lighting, high end commercial')">
+                        <img src="https://image.pollinations.ai/prompt/Elegant%20product%20photography%20of%20luxury%20perfume%20bottle%20on%20marble%20surface,%20studio%20lighting?width=400&height=400&nologo=true" 
+                             class="w-full h-32 object-cover rounded-lg opacity-80 group-hover:opacity-100 transition" alt="产品图">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-2 rounded-b-lg">
+                            <p class="text-xs text-white">📦 产品摄影</p>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-center text-xs text-gray-500">💡 点击上方图片使用同款描述</p>
+            </div>
+
             <!-- Generator Card -->
             <div class="glass rounded-2xl p-8 shadow-2xl">
                 <!-- Prompt Input -->
@@ -154,6 +192,13 @@
         function setSize(w, h) {
             document.getElementById('width').value = w;
             document.getElementById('height').value = h;
+        }
+
+        function setPrompt(text) {
+            document.getElementById('prompt').value = text;
+            document.getElementById('prompt').focus();
+            // 滚动到生成器
+            document.getElementById('generateBtn').scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
 
         async function generateImage() {

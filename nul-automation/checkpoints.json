@@ -68,7 +68,7 @@
       "name": "Windows定时任务配置",
       "status": "completed",
       "date": "2024-03-29",
-      "completed_at": "2024-03-29T06:30:00"
+      "completed_at": "2024-03-29T06:30:00",
       "priority": "medium",
       "description": "设置Task Scheduler自动运行",
       "tasks": [
@@ -83,7 +83,7 @@
       "name": "WordPress自动化系统",
       "status": "completed",
       "date": "2024-03-29",
-      "completed_at": "2024-03-29T06:30:00"
+      "completed_at": "2024-03-29T06:30:00",
       "priority": "medium",
       "description": "实现文章自动生成与发布",
       "tasks": [
@@ -98,7 +98,7 @@
       "name": "n8n工作流编排",
       "status": "completed",
       "date": "2024-03-29",
-      "completed_at": "2024-03-29T06:30:00"
+      "completed_at": "2024-03-29T06:30:00",
       "priority": "low",
       "description": "复杂多步骤工作流可视化",
       "tasks": [

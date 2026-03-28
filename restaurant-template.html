@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{RESTAURANT_NAME} - 精緻美食</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Noto Sans TC', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Header -->
+    <nav class="gradient-bg text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-bold">{RESTAURANT_NAME}</h1>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#about" class="hover:text-yellow-300 transition">關於我們</a>
+                    <a href="#menu" class="hover:text-yellow-300 transition">精選菜單</a>
+                    <a href="#gallery" class="hover:text-yellow-300 transition">環境展示</a>
+                    <a href="#contact" class="hover:text-yellow-300 transition">聯絡我們</a>
+                </div>
+                <button class="bg-yellow-400 text-gray-900 px-4 py-2 rounded-full font-bold hover:bg-yellow-300 transition">
+                    立即訂位
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-purple-900/80 to-blue-900/80 z-10"></div>
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1920" class="absolute inset-0 w-full h-full object-cover" alt="餐廳環境">
+        <div class="relative z-20 text-center text-white px-6">
+            <h2 class="text-5xl md:text-7xl font-bold mb-6">品味生活的美好</h2>
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">{SLOGAN}</p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <button class="bg-yellow-400 text-gray-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-yellow-300 transition transform hover:scale-105">
+                    📞 {PHONE}
+                </button>
+                <button class="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-gray-900 transition">
+                    查看菜單
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="p-8 rounded-2xl bg-gradient-to-br from-purple-50 to-blue-50 shadow-lg hover:shadow-xl transition">
+                    <div class="text-5xl mb-4">⭐</div>
+                    <h3 class="text-xl font-bold mb-2">Google 4.5+ 高分評價</h3>
+                    <p class="text-gray-600">顧客一致推薦的優質餐廳</p>
+                </div>
+                <div class="p-8 rounded-2xl bg-gradient-to-br from-yellow-50 to-orange-50 shadow-lg hover:shadow-xl transition">
+                    <div class="text-5xl mb-4">🌿</div>
+                    <h3 class="text-xl font-bold mb-2">精選食材</h3>
+                    <p class="text-gray-600">每日新鮮採購，品質保證</p>
+                </div>
+                <div class="p-8 rounded-2xl bg-gradient-to-br from-green-50 to-teal-50 shadow-lg hover:shadow-xl transition">
+                    <div class="text-5xl mb-4">🍽️</div>
+                    <h3 class="text-xl font-bold mb-2">特色料理</h3>
+                    <p class="text-gray-600">獨家配方，匠心烹調</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800" class="rounded-2xl shadow-2xl" alt="餐廳內部">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-4xl font-bold mb-6 gradient-text">關於 {RESTAURANT_NAME}</h2>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                        {ABOUT_TEXT}
+                    </p>
+                    <div class="flex gap-4">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-purple-600">{YEARS}+</div>
+                            <div class="text-sm text-gray-500">年經驗</div>
+                        </div>
+                        <div class="w-px bg-gray-300"></div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-purple-600">{CUSTOMERS}+</div>
+                            <div class="text-sm text-gray-500">滿意顧客</div>
+                        </div>
+                        <div class="w-px bg-gray-300"></div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-purple-600">4.5</div>
+                            <div class="text-sm text-gray-500">Google評分</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu -->
+    <section id="menu" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12">精選菜單</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Menu Item 1 -->
+                <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-2xl mb-4">
+                        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400" class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500" alt="招牌菜">
+                        <div class="absolute top-4 right-4 bg-yellow-400 text-gray-900 px-3 py-1 rounded-full font-bold">NT${PRICE1}</div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">{DISH1_NAME}</h3>
+                    <p class="text-gray-600">{DISH1_DESC}</p>
+                </div>
+                <!-- Menu Item 2 -->
+                <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-2xl mb-4">
+                        <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=400" class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500" alt="招牌菜">
+                        <div class="absolute top-4 right-4 bg-yellow-400 text-gray-900 px-3 py-1 rounded-full font-bold">NT${PRICE2}</div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">{DISH2_NAME}</h3>
+                    <p class="text-gray-600">{DISH2_DESC}</p>
+                </div>
+                <!-- Menu Item 3 -->
+                <div class="group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-2xl mb-4">
+                        <img src="https://images.unsplash.com/photo-1473093295043-cdd812d8e1ea?w=400" class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500" alt="招牌菜">
+                        <div class="absolute top-4 right-4 bg-yellow-400 text-gray-900 px-3 py-1 rounded-full font-bold">NT${PRICE3}</div>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">{DISH3_NAME}</h3>
+                    <p class="text-gray-600">{DISH3_DESC}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12">環境展示</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <img src="https://images.unsplash.com/photo-1559329007-40df51a3615d?w=400" class="w-full h-48 object-cover rounded-lg hover:shadow-lg transition cursor-pointer" alt="環境1">
+                <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400" class="w-full h-48 object-cover rounded-lg hover:shadow-lg transition cursor-pointer" alt="環境2">
+                <img src="https://images.unsplash.com/photo-1544148103-0773bf10d330?w=400" class="w-full h-48 object-cover rounded-lg hover:shadow-lg transition cursor-pointer" alt="環境3">
+                <img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d43?w=400" class="w-full h-48 object-cover rounded-lg hover:shadow-lg transition cursor-pointer" alt="環境4">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-12">聯絡我們</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="text-3xl">📍</div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">地址</h4>
+                                <p class="text-gray-600">{ADDRESS}</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="text-3xl">📞</div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">電話</h4>
+                                <p class="text-gray-600">{PHONE}</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="text-3xl">🕐</div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">營業時間</h4>
+                                <p class="text-gray-600">{HOURS}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-gradient-to-br from-purple-100 to-blue-100 rounded-2xl p-8 text-center">
+                        <h3 class="text-2xl font-bold mb-4">立即訂位</h3>
+                        <p class="text-gray-600 mb-6">現在訂位，享受美好用餐時光</p>
+                        <a href="tel:{PHONE}" class="block w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white font-bold py-4 rounded-full hover:shadow-lg transition mb-4">
+                            打電話訂位
+                        </a>
+                        <p class="text-sm text-gray-500">或加入我們的 LINE 好友</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="mb-4">© 2024 {RESTAURANT_NAME}. All rights reserved.</p>
+            <p class="text-gray-400 text-sm">網站由 <span class="text-purple-400">NUL Studio</span> 設計製作</p>
+        </div>
+    </footer>
+
+    <script>
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

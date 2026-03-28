@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NUL Prompt Store - 高效AI提示词市集</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Noto Sans TC', sans-serif; }
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Header -->
+    <nav class="gradient-bg text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <h1 class="text-2xl font-bold">NUL Prompt Store</h1>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#business" class="hover:text-yellow-300 transition">商业文案</a>
+                    <a href="#content" class="hover:text-yellow-300 transition">内容创作</a>
+                    <a href="#coding" class="hover:text-yellow-300 transition">程式开发</a>
+                    <a href="#design" class="hover:text-yellow-300 transition">设计创意</a>
+                </div>
+                <button class="bg-yellow-400 text-gray-900 px-6 py-2 rounded-full font-bold hover:bg-yellow-300 transition">
+                    购物车 (0)
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="relative py-24 overflow-hidden">
+        <div class="absolute inset-0 gradient-bg opacity-90"></div>
+        <div class="container mx-auto px-6 relative z-10 text-center text-white">
+            <h2 class="text-5xl md:text-6xl font-bold mb-6">释放 AI 的全部潜能</h2>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90">
+                精选 100+ 高效 Prompt，立即提升你的 AI 产出质量 10 倍
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <button class="bg-yellow-400 text-gray-900 px-8 py-4 rounded-full font-bold text-lg hover:bg-yellow-300 transition transform hover:scale-105">
+                    浏览全部提示词
+                </button>
+                <button class="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white hover:text-gray-900 transition">
+                    免费试用 3 个
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="py-16 bg-white border-b">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-4xl font-bold text-purple-600 mb-2">100+</div>
+                    <div class="text-gray-600">精选Prompt</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-purple-600 mb-2">50K+</div>
+                    <div class="text-gray-600">用户使用</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-purple-600 mb-2">4.9⭐</div>
+                    <div class="text-gray-600">平均评分</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-purple-600 mb-2">95%</div>
+                    <div class="text-gray-600">满意度</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Prompts -->
+    <section id="business" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-4">🏢 商业文案 Prompt</h2>
+            <p class="text-center text-gray-600 mb-12">提升转化率的专业文案模板</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product 1 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-sm font-bold">热销</span>
+                            <span class="text-2xl font-bold text-gray-900">NT$99</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">小红书爆款文案生成器</h3>
+                        <p class="text-gray-600 mb-4">一键生成高互动率的小红书笔记，包含标题、正文、标签全套</p>
+                        <div class="flex items-center gap-2 mb-4 text-sm text-gray-500">
+                            <span>⭐ 4.9 (328评价)</span>
+                            <span>•</span>
+                            <span>1.2k+ 已售</span>
+                        </div>
+                        <button class="w-full bg-purple-600 text-white py-3 rounded-full font-bold hover:bg-purple-700 transition" onclick="showPreview('xiaohongshu')">
+                            预览效果
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-bold">新品</span>
+                            <span class="text-2xl font-bold text-gray-900">NT$149</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Landing Page 高转化文案</h3>
+                        <p class="text-gray-600 mb-4">专为销售页设计的文案框架，提升 300% 转化率</p>
+                        <div class="flex items-center gap-2 mb-4 text-sm text-gray-500">
+                            <span>⭐ 4.8 (156评价)</span>
+                            <span>•</span>
+                            <span>890+ 已售</span>
+                        </div>
+                        <button class="w-full bg-purple-600 text-white py-3 rounded-full font-bold hover:bg-purple-700 transition" onclick="showPreview('landing')">
+                            预览效果
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-sm font-bold">推荐</span>
+                            <span class="text-2xl font-bold text-gray-900">NT$199</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Email 行销系列模板</h3>
+                        <p class="text-gray-600 mb-4">欢迎信、促销信、挽回信全套 15 封，开信率提升 50%</p>
+                        <div class="flex items-center gap-2 mb-4 text-sm text-gray-500">
+                            <span>⭐ 4.9 (203评价)</span>
+                            <span>•</span>
+                            <span>650+ 已售</span>
+                        </div>
+                        <button class="w-full bg-purple-600 text-white py-3 rounded-full font-bold hover:bg-purple-700 transition" onclick="showPreview('email')">
+                            预览效果
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Creation -->
+    <section id="content" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-4">✍️ 内容创作 Prompt</h2>
+            <p class="text-center text-gray-600 mb-12">让 AI 成为你的专业写手</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300">
+                    <div class="p-6">
+                        <span class="text-2xl font-bold text-gray-900 block mb-4">NT$79</span>
+                        <h3 class="text-xl font-bold mb-2">YouTube 脚本生成器</h3>
+                        <p class="text-gray-600 mb-4">标题、Hook、结构、CTA 全套脚本，10分钟完成</p>
+                        <button class="w-full bg-blue-600 text-white py-3 rounded-full font-bold hover:bg-blue-700 transition">
+                            加入购物车
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300">
+                    <div class="p-6">
+                        <span class="text-2xl font-bold text-gray-900 block mb-4">NT$129</span>
+                        <h3 class="text-xl font-bold mb-2">SEO 文章写作专家</h3>
+                        <p class="text-gray-600 mb-4">自动优化关键词密度，生成 Google 友好的长文</p>
+                        <button class="w-full bg-blue-600 text-white py-3 rounded-full font-bold hover:bg-blue-700 transition">
+                            加入购物车
+                        </button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition duration-300">
+                    <div class="p-6">
+                        <span class="text-2xl font-bold text-gray-900 block mb-4">NT$89</span>
+                        <h3 class="text-xl font-bold mb-2">社群贴文万能模板</h3>
+                        <p class="text-gray-600 mb-4">FB、IG、Twitter 全平台适用，高互动率配方</p>
+                        <button class="w-full bg-blue-600 text-white py-3 rounded-full font-bold hover:bg-blue-700 transition">
+                            加入购物车
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coding & Design -->
+    <section id="coding" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <!-- Coding -->
+                <div>
+                    <h2 class="text-3xl font-bold mb-8">💻 程式开发 Prompt</h2>
+                    <div class="space-y-4">
+                        <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="text-lg font-bold mb-2">代码解释与优化专家</h3>
+                                    <p class="text-gray-600 text-sm">自动解释复杂代码 + 性能优化建议</p>
+                                </div>
+                                <span class="text-xl font-bold text-purple-600">NT$149</span>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="text-lg font-bold mb-2">Bug 调试助手</h3>
+                                    <p class="text-gray-600 text-sm">精准定位错误 + 提供修复方案</p>
+                                </div>
+                                <span class="text-xl font-bold text-purple-600">NT$129</span>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="text-lg font-bold mb-2">API 文档生成器</h3>
+                                    <p class="text-gray-600 text-sm">自动生成专业 API 文档</p>
+                                </div>
+                                <span class="text-xl font-bold text-purple-600">NT$199</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Design -->
+                <div id="design">
+                    <h2 class="text-3xl font-bold mb-8">🎨 设计创意 Prompt</h2>
+                    <div class="space-y-4">
+                        <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="text-lg font-bold mb-2">Midjourney 咒语生成器</h3>
+                                    <p class="text-gray-600 text-sm">描述 → 专业 Prompt，生成惊艳图片</p>
+                                </div>
+                                <span class="text-xl font-bold text-purple-600">NT$199</span>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="text-lg font-bold mb-2">Logo 设计 Brief 生成</h3>
+                                    <p class="text-gray-600 text-sm">自动生成专业设计需求文档</p>
+                                </div>
+                                <span class="text-xl font-bold text-purple-600">NT$99</span>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition">
+                            <div class="flex justify-between items-start">
+                                <div>
+                                    <h3 class="text-lg font-bold mb-2">UI/UX 设计顾问</h3>
+                                    <p class="text-gray-600 text-sm">界面优化建议 + 用户体验改进</p>
+                                </div>
+                                <span class="text-xl font-bold text-purple-600">NT$249</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bundle Offer -->
+    <section class="py-20 gradient-bg text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-6">🎁 超值套装优惠</h2>
+            <p class="text-xl mb-8 opacity-90">一次购买，终身使用，永久更新</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
+                    <h3 class="text-2xl font-bold mb-4">入门套装</h3>
+                    <div class="text-4xl font-bold mb-4">NT$499</div>
+                    <p class="text-sm opacity-80 mb-6">原价 NT$897</p>
+                    <ul class="text-left space-y-2 mb-8 text-sm">
+                        <li>✓ 5 个商业文案 Prompt</li>
+                        <li>✓ 3 个内容创作 Prompt</li>
+                        <li>✓ 基础使用指南</li>
+                    </ul>
+                    <button class="w-full bg-yellow-400 text-gray-900 py-3 rounded-full font-bold hover:bg-yellow-300 transition">
+                        立即购买
+                    </button>
+                </div>
+
+                <div class="bg-white/20 backdrop-blur-md rounded-2xl p-8 border-2 border-yellow-400 transform scale-105">
+                    <div class="bg-yellow-400 text-gray-900 text-sm font-bold px-4 py-1 rounded-full inline-block mb-4">最受欢迎</div>
+                    <h3 class="text-2xl font-bold mb-4">专业套装</h3>
+                    <div class="text-4xl font-bold mb-4">NT$999</div>
+                    <p class="text-sm opacity-80 mb-6">原价 NT$2,497</p>
+                    <ul class="text-left space-y-2 mb-8 text-sm">
+                        <li>✓ 15 个商业文案 Prompt</li>
+                        <li>✓ 10 个内容创作 Prompt</li>
+                        <li>✓ 8 个开发设计 Prompt</li>
+                        <li>✓ 视频教程</li>
+                        <li>✓ 1年更新</li>
+                    </ul>
+                    <button class="w-full bg-yellow-400 text-gray-900 py-3 rounded-full font-bold hover:bg-yellow-300 transition">
+                        立即购买
+                    </button>
+                </div>
+
+                <div class="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
+                    <h3 class="text-2xl font-bold mb-4">全站通</h3>
+                    <div class="text-4xl font-bold mb-4">NT$1,999</div>
+                    <p class="text-sm opacity-80 mb-6">原价 NT$4,997</p>
+                    <ul class="text-left space-y-2 mb-8 text-sm">
+                        <li>✓ 全部 100+ Prompt</li>
+                        <li>✓ 永久免费更新</li>
+                        <li>✓ 1对1咨询 30分钟</li>
+                        <li>✓ VIP 社群访问</li>
+                    </ul>
+                    <button class="w-full bg-white/20 text-white py-3 rounded-full font-bold hover:bg-white/30 transition">
+                        立即购买
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Preview Modal -->
+    <div id="previewModal" class="fixed inset-0 bg-black/50 hidden items-center justify-center z-50">
+        <div class="bg-white rounded-2xl p-8 max-w-2xl mx-4 max-h-[80vh] overflow-y-auto">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold" id="previewTitle">Prompt 预览</h3>
+                <button onclick="closePreview()" class="text-2xl">&times;</button>
+            </div>
+            <div id="previewContent" class="space-y-4">
+                <!-- Content will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="mb-4">© 2024 NUL Prompt Store. All rights reserved.</p>
+            <p class="text-gray-400 text-sm">让每一个 AI 输出都精准高效</p>
+        </div>
+    </footer>
+
+    <script>
+        const previews = {
+            xiaohongshu: {
+                title: '小红书爆款文案生成器',
+                content: `
+                    <div class="bg-gray-100 p-4 rounded-lg font-mono text-sm">
+                        <p class="font-bold mb-2">Prompt 模板：</p>
+                        <p>你是一位小红书爆款文案专家。请为以下产品写一篇笔记：</p>
+                        <p class="mt-2 text-purple-600">[产品名称]: {PRODUCT_NAME}</p>
+                        <p class="text-purple-600">[核心卖点]: {SELLING_POINT}</p>
+                        <p class="text-purple-600">[目标受众]: {TARGET_AUDIENCE}</p>
+                        <p class="mt-4">要求：</p>
+                        <ul class="list-disc ml-5 mt-2 space-y-1">
+                            <li>标题要有情绪价值，使用 emoji</li>
+                            <li>正文分段清晰，每段不超过3行</li>
+                            <li>结尾有互动引导（提问/投票）</li>
+                            <li>添加 5-8 个精准标签</li>
+                        </ul>
+                    </div>
+                    <div class="mt-4">
+                        <p class="font-bold">示例输出：</p>
+                        <div class="bg-pink-50 p-4 rounded-lg mt-2">
+                            <p class="font-bold text-pink-600">标题：🔥 这个神仙单品让我素颜也能出门！同事都问我是不是偷偷医美了</p>
+                            <p class="mt-2 text-gray-700">姐妹们！我真的要吹爆这个...</p>
+                        </div>
+                    </div>
+                `
+            },
+            landing: {
+                title: 'Landing Page 高转化文案',
+                content: `
+                    <div class="bg-gray-100 p-4 rounded-lg font-mono text-sm">
+                        <p class="font-bold mb-2">AIDA 框架 Prompt：</p>
+                        <p>请使用 AIDA 框架（注意→兴趣→欲望→行动）为以下产品写 Landing Page：</p>
+                        <p class="mt-2 text-purple-600">[产品]: {PRODUCT}</p>
+                        <p class="text-purple-600">[痛点]: {PAIN_POINT}</p>
+                        <p class="text-purple-600">[解决方案]: {SOLUTION}</p>
+                        <p class="text-purple-600">[价格]: {PRICE}</p>
+                        <p class="mt-4">结构：</p>
+                        <ul class="list-disc ml-5 mt-2 space-y-1">
+                            <li>Attention：震惊数据或痛点共鸣</li>
+                            <li>Interest：独特卖点 + 社会证明</li>
+                            <li>Desire：描绘使用后的美好场景</li>
+                            <li>Action：限时优惠 + 零风险承诺</li>
+                        </ul>
+                    </div>
+                `
+            },
+            email: {
+                title: 'Email 行销系列模板',
+                content: `
+                    <div class="bg-gray-100 p-4 rounded-lg font-mono text-sm">
+                        <p class="font-bold mb-2">欢迎信模板：</p>
+                        <p>主题：欢迎加入！这是你专属的 {BONUS}</p>
+                        <p class="mt-4">正文结构：</p>
+                        <ul class="list-disc ml-5 mt-2 space-y-1">
+                            <li>1. 感谢订阅 + 确认价值</li>
+                            <li>2. 立即提供承诺的赠品</li>
+                            <li>3. 预告未来会收到的价值</li>
+                            <li>4. 引导关注社群/下载 App</li>
+                            <li>5. P.S. 添加第一个小任务</li>
+                        </ul>
+                    </div>
+                    <div class="mt-4 bg-blue-50 p-4 rounded-lg">
+                        <p class="font-bold text-blue-700">全套包含 15 封邮件：</p>
+                        <p class="text-sm mt-2">欢迎信 → 价值交付 → 痛点挖掘 → 方案展示 → 促销转化 → 挽回激活</p>
+                    </div>
+                `
+            }
+        };
+
+        function showPreview(type) {
+            const modal = document.getElementById('previewModal');
+            const title = document.getElementById('previewTitle');
+            const content = document.getElementById('previewContent');
+            
+            title.textContent = previews[type].title;
+            content.innerHTML = previews[type].content;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closePreview() {
+            const modal = document.getElementById('previewModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // Close modal on outside click
+        document.getElementById('previewModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closePreview();
+            }
+        });
+    </script>
+</body>
+</html>

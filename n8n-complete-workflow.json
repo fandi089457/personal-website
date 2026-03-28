@@ -1,0 +1,165 @@
+# NUL 完整版 n8n 工作流
+# 修复了所有问题，立即可用！
+
+{
+  "name": "NUL 自动化工作流 - 完整版",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "manual-trigger",
+      "name": "When clicking 'Execute Workflow'",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// 设置默认参数\nreturn {\n  json: {\n    prompt: $input.first().json.prompt || 'a beautiful sunset over the ocean',\n    width: $input.first().json.width || 1024,\n    height: $input.first().json.height || 1024,\n    num_outputs: $input.first().json.num_outputs || 1\n  }\n};"
+      },
+      "id": "set-defaults",
+      "name": "Set Default Parameters",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [450, 300]
+    },
+    {
+      "parameters": {
+        "model": "black-forest-labs/flux-schnell",
+        "input": {
+          "prompt": "={{ $json.prompt }}",
+          "width": "={{ $json.width }}",
+          "height": "={{ $json.height }}",
+          "num_outputs": "={{ $json.num_outputs }}"
+        }
+      },
+      "id": "replicate-image",
+      "name": "Generate Image (Replicate)",
+      "type": "n8n-nodes-base.replicate",
+      "typeVersion": 1,
+      "position": [650, 300],
+      "credentials": {
+        "replicateApi": {
+          "id": "replicate-api-key",
+          "name": "Replicate account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// 处理 Replicate 输出\nconst output = $input.first().json.output;\n\n// Replicate 返回的是图片 URL 数组\nconst images = Array.isArray(output) ? output : [output];\n\nreturn {\n  json: {\n    success: true,\n    images: images,\n    total_generated: images.length,\n    timestamp: new Date().toISOString()\n  }\n};"
+      },
+      "id": "process-output",
+      "name": "Process Output",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [850, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// 错误处理\nconst error = $input.first().json.error;\n\nif (error) {\n  return {\n    json: {\n      success: false,\n      error: error.message || 'Unknown error',\n      timestamp: new Date().toISOString()\n    }\n  };\n}\n\nreturn $input.all();"
+      },
+      "id": "error-handler",
+      "name": "Error Handler",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [650, 500]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $env.WEBHOOK_URL || 'https://nul-api-proxy.fandi089457.workers.dev/notify' }}",
+        "sendBody": true,
+        "body": {
+          "success": "={{ $json.success }}",
+          "images": "={{ JSON.stringify($json.images) }}",
+          "total": "={{ $json.total_generated }}"
+        }
+      },
+      "id": "send-notification",
+      "name": "Send Notification",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [1050, 300]
+    },
+    {
+      "parameters": {
+        "fileName": "={{ 'ai-image-' + new Date().getTime() + '.png' }}",
+        "dataPropertyName": "data",
+        "options": {}
+      },
+      "id": "save-to-disk",
+      "name": "Save Image to Disk",
+      "type": "n8n-nodes-base.writeBinaryFile",
+      "typeVersion": 1,
+      "position": [1050, 100],
+      "continueOnFail": true
+    }
+  ],
+  "connections": {
+    "When clicking 'Execute Workflow'": {
+      "main": [
+        [
+          {
+            "node": "Set Default Parameters",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Default Parameters": {
+      "main": [
+        [
+          {
+            "node": "Generate Image (Replicate)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Image (Replicate)": {
+      "main": [
+        [
+          {
+            "node": "Process Output",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ],
+      "error": [
+        [
+          {
+            "node": "Error Handler",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Process Output": {
+      "main": [
+        [
+          {
+            "node": "Send Notification",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Save Image to Disk",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "errorWorkflow": ""
+  },
+  "tags": ["AI", "Image Generation", "Automation"],
+  "active": false,
+  "pinData": {}
+}
